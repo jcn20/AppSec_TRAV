@@ -1,0 +1,11 @@
+before_build:
+        - sudo apt-get update
+        - sudo apt-get install -y check
+
+language: c
+compiler: gcc
+
+script:
+        - make
+        - make test
+
