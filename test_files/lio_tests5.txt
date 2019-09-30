@@ -1,0 +1,3 @@
+Hello, this is a pretty standard test.
+Except...random new line character /n
+And a space in %s
