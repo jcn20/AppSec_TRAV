@@ -1,0 +1,41 @@
+==3883== Memcheck, a memory error detector
+==3883== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==3883== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==3883== Command: ./spell test1.txt wordlist.txt
+==3883== Parent PID: 1749
+==3883== 
+==3883== 
+==3883== HEAP SUMMARY:
+==3883==     in use at exit: 6,879,888 bytes in 122,849 blocks
+==3883==   total heap usage: 122,853 allocs, 4 frees, 6,889,656 bytes allocated
+==3883== 
+==3883== 16 bytes in 3 blocks are still reachable in loss record 1 of 4
+==3883==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3883==    by 0x108FA9: check_words (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883==    by 0x108B2A: main (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883== 
+==3883== 552 bytes in 1 blocks are still reachable in loss record 2 of 4
+==3883==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3883==    by 0x4EBAE49: __fopen_internal (iofopen.c:65)
+==3883==    by 0x4EBAE49: fopen@@GLIBC_2.2.5 (iofopen.c:89)
+==3883==    by 0x108AD8: main (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883== 
+==3883== 1,232 bytes in 22 blocks are definitely lost in loss record 3 of 4
+==3883==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3883==    by 0x108EAC: check_words (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883==    by 0x108B2A: main (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883== 
+==3883== 6,878,088 bytes in 122,823 blocks are still reachable in loss record 4 of 4
+==3883==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==3883==    by 0x108D2F: load_dictionary (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883==    by 0x108B0A: main (in /home/lio/Documents/AppSec_TRAV/spell)
+==3883== 
+==3883== LEAK SUMMARY:
+==3883==    definitely lost: 1,232 bytes in 22 blocks
+==3883==    indirectly lost: 0 bytes in 0 blocks
+==3883==      possibly lost: 0 bytes in 0 blocks
+==3883==    still reachable: 6,878,656 bytes in 122,827 blocks
+==3883==         suppressed: 0 bytes in 0 blocks
+==3883== 
+==3883== For counts of detected and suppressed errors, rerun with: -v
+==3883== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
